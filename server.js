@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import DbConnect from "./config/Db.js";
 
-import oneLinerRoutes from "./routes/oneLinerroutes.js";
+// import oneLinerRoutes from "./routes/oneLinerroutes.js";
 import quizRoutes from "./routes/quizRoutes.js";
 
 import dns from "node:dns/promises";
@@ -23,6 +23,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/v1/class10eng/quiz", quizRoutes);
 app.use("/api/v1/enggrammar/quiz", quizRoutes);
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`App is listening on ${PORT}`);
 });
