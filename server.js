@@ -20,7 +20,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
-app.use("/api/v1/enggrammar/oneliner", oneLinerRoutes);
+app.use("/api/v1/class10eng/quiz", quizRoutes);
 app.use("/api/v1/enggrammar/quiz", quizRoutes);
 
 app.listen(PORT, () => {
