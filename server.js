@@ -10,14 +10,14 @@ import dns from "node:dns/promises";
 dns.setServers(["1.1.1.1"]);
 
 dotenv.config();
-DbConnect();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
+DbConnect();
+const PORT = process.env.PORT || 3001;
 
 // Routes
 app.use("/api/v1/class10eng/quiz", quizRoutes);
