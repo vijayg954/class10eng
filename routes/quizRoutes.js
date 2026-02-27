@@ -12,3 +12,7 @@ router.get("/", getQuizList);
 router.get("/:id", getQuizById);
 
 export default router;
+
+
+
+

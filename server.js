@@ -21,7 +21,9 @@ const PORT = process.env.PORT || 3001;
 
 // Routes
 app.use("/api/v1/class10eng/quiz", quizRoutes);
+app.use("/api/v1/class10eng2/quiz", quizRoutes);
 app.use("/api/v1/enggrammar/quiz", quizRoutes);
+app.use("/api/v1/poems/quiz", quizRoutes);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`App is listening on ${PORT}`);
