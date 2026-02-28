@@ -59,3 +59,31 @@ export const getQuizById = async (req, res) => {
     });
   }
 };
+
+// Update Quiz
+export const updateQuiz = async (req, res) => {
+  try {
+    const updatedQuiz = await Quiz.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }   // return updated document
+    );
+
+    if (!updatedQuiz) {
+      return res.status(404).json({
+        success: false,
+        message: "Quiz not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      quiz: updatedQuiz,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
