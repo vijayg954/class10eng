@@ -3,6 +3,7 @@ import {
   createQuiz,
   getQuizList,
   getQuizById,
+  updateQuiz,
 } from "../controllers/QuizController.js";
 
 const router = express.Router();
